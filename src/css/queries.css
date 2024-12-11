@@ -1,0 +1,5 @@
+/* In media queries, 1rem = 1em = 16px */
+
+/* BELOW 1344px */
+@media (max-width: 84em) {
+}
