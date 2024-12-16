@@ -57,17 +57,17 @@ The goal of the project is to learn API calls through the usage of async/await a
     - [x] Rough Structure
     - [x] Favicons
   - [ ] Webpack
-    - [ ] "npm init"
-    - [ ] "npm install --save-dev webpack webpack-cli"
-    - [ ] "npm install --save-dev html-webpack-plugin"
-    - [ ] Remove script tag
-    - [ ] "npm install --save-dev style-loader css-loader"
-    - [ ] Import the CSS file into a JS file
-    - [ ] "npm install --save-dev html-loader"
-    - [ ] Follow the steps in "img.js"
-    - [ ] "npm install --save-dev webpack-dev-server"
-    - [ ] "npx webpack serve"
-    - [ ] Kill the server with ^C
+    - [x] "npm init"
+    - [x] "npm install --save-dev webpack webpack-cli"
+    - [x] "npm install --save-dev html-webpack-plugin"
+    - [x] Remove script tag
+    - [x] "npm install --save-dev style-loader css-loader"
+    - [x] Import the CSS file into a JS file
+    - [x] "npm install --save-dev html-loader"
+    - [x] Follow the steps in "img.js"
+    - [x] "npm install --save-dev webpack-dev-server"
+    - [x] "npx webpack serve"
+    - [x] Kill the server with ^C
   - [ ] Console-Based Logic
   - [ ] Fix bugs
     - [ ] No Bugs Yet!
