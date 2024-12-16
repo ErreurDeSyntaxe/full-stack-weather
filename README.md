@@ -1,13 +1,13 @@
-# Simple Template
+# Weather App
 
-A template for projects that may require Parcel
+A website to search for the weather in a city.
 
 ## About the Project
 
 ### Preview
 
 <div align='center'>
-    <img src='./README/project-preview.png'>
+    <img src='./README/project-preview.jpg'>
 </div>
 
 ### Live
@@ -16,39 +16,40 @@ A template for projects that may require Parcel
 
 ### Objective
 
-The goal of the project is to learn xyz by building abc.
+The goal of the project is to learn API calls through the usage of async/await and promises.
+
+### Assignment
+
+[The Odin Project (Dec '24)](https://www.theodinproject.com/lessons/javascript-webpack)
 
 ### Notable Features
 
-- Add something
-- Edit something
-- Remove something
-- Allow users to complicate dev's job
+- Search for a city
+- Display current weather
+- Display upcoming weather
 
 ### Built With
 
 <img src='./README/html5-logo.svg' style='width:40px; height: 40px' >
 <img src='./README/css3-logo.svg' style='width:40px; height: 40px' >
 <img src='./README/javascript-logo.svg' style='width:40px; height: 40px' >
-<!-- <img src='./README/webpack-logo.svg' style='width:40px; height: 40px' > -->
-<!-- <img src='./README/parcel.ico' style='width:40px; height: 40px' > -->
+<img src='./README/webpack-logo.svg' style='width:40px; height: 40px' >
 
 ## Development
 
 ### To Do
 
-- [ ] Rewrite the README
-  - [ ] Title
-  - [ ] Live Page Link
-  - [ ] Objective
-  - [ ] Project Statement
-  - [ ] Notable Features
+- [x] Rewrite the README
+  - [x] Title
+  - [x] Objective
+  - [x] Project Statement
+  - [x] Notable Features
 - [ ] Plan
-  - [ ] User stories
-  - [ ] Features
-  - [ ] Flowchart
-  - [ ] Architecture
-  - [ ] UI Design/Sketch
+  - [x] User stories
+  - [x] Features
+  - [x] Flowchart
+  - [x] Architecture
+  - [x] UI Design/Sketch
 - [ ] Development
   - [ ] Basic HTML
     - [ ] Title
@@ -64,6 +65,18 @@ The goal of the project is to learn xyz by building abc.
     - [ ] "npm i parcel -D"
     - [ ] Run Local Host With CLI: "npm start"
     - [ ] Build Deployment-Ready Files With CLI: "npm run build"
+  - [ ] Webpack
+    - [ ] "npm init"
+    - [ ] "npm install --save-dev webpack webpack-cli"
+    - [ ] "npm install --save-dev html-webpack-plugin"
+    - [ ] Remove script tag
+    - [ ] "npm install --save-dev style-loader css-loader"
+    - [ ] Import the CSS file into a JS file
+    - [ ] "npm install --save-dev html-loader"
+    - [ ] Follow the steps in "img.js"
+    - [ ] "npm install --save-dev webpack-dev-server"
+    - [ ] "npx webpack serve"
+    - [ ] Kill the server with ^C
   - [ ] Console-Based Logic
   - [ ] Fix bugs
     - [ ] No Bugs Yet!
@@ -81,25 +94,58 @@ The goal of the project is to learn xyz by building abc.
   - [ ] Optimization
     - [ ] Images
     - [ ] Lighthouse
+- [ ] Deployment
+  - [ ] Change "development" to "production" in webpack.config.js (undo if need)
+  - [ ] "git branch gh-pages" (one time only)
+  - [ ] Commit everything (redo each time)
+  - [ ] "git checkout gh-pages && git merge main --no-edit" (redo each time)
+  - [ ] "npx webpack" (redo)
+  - [ ] 'git add dist -f && git commit -m "Deployment commit"' (redo)
+  - [ ] "git subtree push --prefix dist origin gh-pages" (redo)
+  - [ ] "git checkout main" (redo)
 - [ ] Review README
+  - [ ] Live Page Link
+  - [ ] Built With
+  - [ ] Reflection
 
 ### User Stories
 
-- As a user, I want...
+- As a user, I want to know the weather forecast for my location (by default)
+- As a user, I want to search for a city at any time
+- As a user, I want to know the weather of a city
+- As a user, I want to see a loading event when waiting for the information
 
 ### Features
 
-- Users can...
+Search bar
+Loading wheel
+Current weather
+Five-day forecast
 
 ### Flowchart
 
-Page Loads ->
+Page Loads -> Request user location -> Fetch weather information
+-> Display loading wheel -> Display information
+
+User Searches -> Fetch -> Display loading wheel -> Display information
 
 ### Architecture
 
-class App {
--greet()
+model.js
+export const state = {
+-location
+-weather info
 }
+
+controller.js
+getLocation()
+addHandlers()
+
+view.js
+render(state)
+addHandlerSpinner(handler)
+addHandlerReceiveInput(handler)
+export default new View();
 
 ## Reflection
 
@@ -109,4 +155,4 @@ Some lessons learned along the way
 
 ### Diary
 
-Some thoughts regarding the project
+The goal of the project is to practice API calls and promises. I will use async/await because it seems cleaner than other options. The website will not be super stylish, but it will not be pure HTML either.
