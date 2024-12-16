@@ -51,20 +51,11 @@ The goal of the project is to learn API calls through the usage of async/await a
   - [x] Architecture
   - [x] UI Design/Sketch
 - [ ] Development
-  - [ ] Basic HTML
-    - [ ] Title
-    - [ ] Meta
-    - [ ] Rough Structure
-    - [ ] Favicons
-  - [ ] Parcel
-    - [ ] "npm init"
-    - [ ] Remove "main": "index.js"
-    - [ ] Later Replace With "default": "index.html"
-    - [ ] Rewrite "test" to "start": "parcel index.html"
-    - [ ] Add "build": "parcel build index.html --dist-dir ./dist"
-    - [ ] "npm i parcel -D"
-    - [ ] Run Local Host With CLI: "npm start"
-    - [ ] Build Deployment-Ready Files With CLI: "npm run build"
+  - [x] Basic HTML
+    - [x] Title
+    - [x] Meta
+    - [x] Rough Structure
+    - [x] Favicons
   - [ ] Webpack
     - [ ] "npm init"
     - [ ] "npm install --save-dev webpack webpack-cli"
