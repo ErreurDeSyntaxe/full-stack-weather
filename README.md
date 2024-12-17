@@ -44,7 +44,7 @@ The goal of the project is to learn API calls through the usage of async/await a
   - [x] Objective
   - [x] Project Statement
   - [x] Notable Features
-- [ ] Plan
+- [x] Plan
   - [x] User stories
   - [x] Features
   - [x] Flowchart
@@ -56,7 +56,7 @@ The goal of the project is to learn API calls through the usage of async/await a
     - [x] Meta
     - [x] Rough Structure
     - [x] Favicons
-  - [ ] Webpack
+  - [x] Webpack
     - [x] "npm init"
     - [x] "npm install --save-dev webpack webpack-cli"
     - [x] "npm install --save-dev html-webpack-plugin"
