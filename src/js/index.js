@@ -1,8 +1,9 @@
 import '../css/style.css';
+import view from '../js/view.js';
 
 /**
- *
- * @returns {Object} Geolocation data
+ * Obtain the user's locaiton
+ * @returns {object} Geolocation data (lat, lng, city, country)
  */
 const getLocation = async function () {
   if (!navigator.geolocation) return 'Geolocation not supported';
@@ -21,7 +22,10 @@ const getLocation = async function () {
 
           const dataGeo = await resGeo.json();
 
-          resolve({ lat, lng, dataGeo });
+          const { city } = dataGeo;
+          const { country } = dataGeo;
+
+          resolve({ lat, lng, city, country });
         } catch (err) {
           reject(err);
         }
@@ -33,37 +37,68 @@ const getLocation = async function () {
   });
 };
 
-// When using user input, call getWeather(location) & check if location is undefined
-const getWeather = async function (location = { lat: 24.1202, lng: 120.6836 }) {
+/**
+ * Package the desired weather data in an object for neatness
+ * @param {number} currTemp Current temperature at 2m above sea level
+ * @param {number} appTemp Apparent temperature at 2m above sea level
+ * @param {number} preciPr Probability of precipitation (0 - 100)
+ * @param {number} minTemp Minimum temperature for the day
+ * @param {number} maxTemp Maximum temperature for the day
+ * @returns {object} Contain the above paraments
+ */
+const makeWeatherObj = function (currTemp, appTemp, preciPr, minTemp, maxTemp) {
+  const obj = { currTemp, appTemp, preciPr, minTemp, maxTemp };
+  return obj;
+};
+
+/**
+ * Call weather API to a specified location
+ * @param {object} [location = undefined] Latitude, longitude, city & country
+ */
+const getWeather = async function (location = undefined) {
   try {
-    // const location = await getLocation();
-    // console.log(location);
+    // The location was not specified by the user (at page load)
+    if (location === undefined) location = await getLocation();
+
     const weather = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lng}&hourly=temperature_2m,apparent_temperature,precipitation_probability`
+      `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lng}&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo`
     );
     const data = await weather.json();
+    const noonToday = makeWeatherObj(
+      data.hourly.temperature_2m[12],
+      data.hourly.apparent_temperature[12],
+      data.hourly.precipitation_probability[12],
+      data.daily.temperature_2m_min[0],
+      data.daily.temperature_2m_max[0]
+    );
+    const noonTomorr = makeWeatherObj(
+      data.hourly.temperature_2m[36],
+      data.hourly.apparent_temperature[36],
+      data.hourly.precipitation_probability[36],
+      data.daily.temperature_2m_min[1],
+      data.daily.temperature_2m_max[1]
+    );
+    const noonAfterTo = makeWeatherObj(
+      data.hourly.temperature_2m[60],
+      data.hourly.apparent_temperature[60],
+      data.hourly.precipitation_probability[60],
+      data.daily.temperature_2m_min[2],
+      data.daily.temperature_2m_max[2]
+    );
 
-    console.log(data);
+    view.renderMessage(
+      location.city,
+      location.country,
+      noonToday,
+      noonTomorr,
+      noonAfterTo
+    );
   } catch (err) {
     console.error(err);
   }
 };
 
-const getTime = function () {
-  // data.hourly.time[0]
-  // 2024-12-17T00:00
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth() + 1;
-  const day = now.getDate();
-  const hour = now.getHours();
-  const zeroHour = hour < 10 ? `0${hour}` : hour;
-  console.log(now);
-  console.log(`${year}-${month}-${day}T${zeroHour}:00`);
-  return `${year}-${month}-${day}T${zeroHour}:00`;
-};
-// getTime();
-
-const getWeatherNow = function () {};
-
-// getWeather();
+/**
+ * Run when the page loads to display the weather at the user's location
+ */
+getWeather();
