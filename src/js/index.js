@@ -90,7 +90,7 @@ const getWeather = async function (location = undefined) {
       data.daily.temperature_2m_max[2]
     );
 
-    view.renderMessage(
+    view.renderWeather(
       location.city,
       location.country,
       noonToday,
