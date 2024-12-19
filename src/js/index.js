@@ -1,4 +1,5 @@
 import '../css/style.css';
+import * as model from '../js/model.js';
 import view from '../js/view.js';
 
 /**
@@ -58,7 +59,10 @@ const makeWeatherObj = function (currTemp, appTemp, preciPr, minTemp, maxTemp) {
 const getWeather = async function (location = undefined) {
   try {
     // The location was not specified by the user (at page load)
-    if (location === undefined) location = await getLocation();
+    if (location === undefined) {
+      location = await getLocation();
+      model.state.location = location;
+    }
 
     const weather = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lng}&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo`
@@ -98,7 +102,40 @@ const getWeather = async function (location = undefined) {
   }
 };
 
+const controlSearchResult = async function () {
+  try {
+    // spinner
+    view.renderSpinner();
+
+    // get search query
+    const query = view.getQuery();
+    if (!query) return;
+
+    // find the location thru API
+    const search = await fetch(`https://geocode.xyz/locate=${query}?json=1`);
+    if (!search.ok) throw new Error(`Geocode API Error: ${search.statusText}`);
+
+    // extract relevant data
+    const data = await search.json();
+    const { latt: lat, longt: lng } = data;
+    // console.log(data.standard);
+    const { city, countryname: country } = data.standard;
+
+    // load in state
+    model.state.search = { lat, lng, city, country };
+
+    // search for weather at query
+    await getWeather(model.state.search);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 /**
  * Run when the page loads to display the weather at the user's location
  */
-getWeather();
+const init = function () {
+  getWeather();
+  view.addHandlerSearch(controlSearchResult);
+};
+init();
