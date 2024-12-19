@@ -10,11 +10,29 @@ class View {
    * @param  {...any} arr Three days' worth of weather data
    */
   renderWeather(city, country, ...arr) {
-    console.log('=======================');
-    arr.forEach((day) => {
-      let str = `In ${city}, ${country}, the temperature is ${day.currTemp}, but the apparent temperature is ${day.appTemp}. The minimum for the day is ${day.minTemp}, and the maximum is ${day.maxTemp}. There is a ${day.preciPr}% chance of precipitation.`;
-      console.log(str);
-    });
+    this.#weather.innerHTML = '';
+    const markup = `
+      <p class="location">${city}, ${country}</p>
+      <div class="weather-card today">
+        <p class="day">Today</p>
+        <p class="temp-curr">Now: ${arr[0].currTemp}ºC</p>
+        <p class="temp-max">Max: ${arr[0].maxTemp}ºC</p>
+        <p class="temp-min">Min: ${arr[0].minTemp}ºC</p>
+        <p class="temp-preci">Rain/Snow: ${arr[0].preciPr}%</p>
+      </div>
+      <div class="weather-card future">
+        <p class="day">Tomorrow</p>
+        <p class="temp-max">Max: ${arr[1].maxTemp}ºC</p>
+        <p class="temp-min">Min: ${arr[1].minTemp}ºC</p>
+        <p class="temp-preci">Rain/Snow: ${arr[1].preciPr}%</p>
+      </div>
+      <div class="weather-card future">
+        <p class="day">After Tomorrow</p>
+        <p class="temp-max">Max: ${arr[2].maxTemp}ºC</p>
+        <p class="temp-min">Min: ${arr[2].minTemp}ºC</p>
+        <p class="temp-preci">Rain/Snow: ${arr[2].preciPr}%</p>
+      </div>`;
+    this.#weather.insertAdjacentHTML('afterbegin', markup);
   }
 
   /**
