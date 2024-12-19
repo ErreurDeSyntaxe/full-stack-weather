@@ -61,7 +61,7 @@ const getWeather = async function (location = undefined) {
     // The location was not specified by the user (at page load)
     if (location === undefined) {
       location = await getLocation();
-      model.state.location = location;
+      model.loadLocation(location);
     }
 
     const weather = await fetch(
@@ -102,6 +102,10 @@ const getWeather = async function (location = undefined) {
   }
 };
 
+/**
+ * MVC event listener handler: process user input to get weather at location
+ * @returns {undefined}
+ */
 const controlSearchResult = async function () {
   try {
     // spinner
@@ -118,11 +122,10 @@ const controlSearchResult = async function () {
     // extract relevant data
     const data = await search.json();
     const { latt: lat, longt: lng } = data;
-    // console.log(data.standard);
     const { city, countryname: country } = data.standard;
 
     // load in state
-    model.state.search = { lat, lng, city, country };
+    model.loadSearch({ lat, lng, city, country });
 
     // search for weather at query
     await getWeather(model.state.search);

@@ -3,6 +3,10 @@ export const state = {
   search: {},
 };
 
-export const loadLocation = function (location) {};
+export const loadLocation = function (location) {
+  state.location = location;
+};
 
-export const loadSearch = function (search) {};
+export const loadSearch = function (search) {
+  state.search = search;
+};

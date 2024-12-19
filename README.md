@@ -68,7 +68,7 @@ The goal of the project is to learn API calls through the usage of async/await a
     - [x] "npm install --save-dev webpack-dev-server"
     - [x] "npx webpack serve"
     - [x] Kill the server with ^C
-  - [ ] Console-Based Logic
+  - [x] Console-Based Logic
     - [x] Get User Location
     - [x] Get Weather At Location
     - [x] Log Weather At Noon For 3 Days (今, 明, 後天)
