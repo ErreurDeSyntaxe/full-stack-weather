@@ -12,7 +12,7 @@ A website to search for the weather in a city.
 
 ### Live
 
-<a href='http://google.com/'>Google</a>
+<a href='https://erreurdesyntaxe.github.io/full-stack-weather/'>Weather Report</a>
 
 ### Objective
 
@@ -20,7 +20,7 @@ The goal of the project is to learn API calls through the usage of async/await a
 
 ### Assignment
 
-[The Odin Project (Dec '24)](https://www.theodinproject.com/lessons/javascript-webpack)
+[The Odin Project (Dec '24)](https://www.theodinproject.com/lessons/node-path-javascript-weather-app)
 
 ### Notable Features
 
@@ -50,7 +50,7 @@ The goal of the project is to learn API calls through the usage of async/await a
   - [x] Flowchart
   - [x] Architecture
   - [x] UI Design/Sketch
-- [ ] Development
+- [x] Development
   - [x] Basic HTML
     - [x] Title
     - [x] Meta
@@ -85,19 +85,19 @@ The goal of the project is to learn API calls through the usage of async/await a
   - [x] Optimization
     - [x] Images
     - [x] Lighthouse
-- [ ] Deployment
-  - [ ] Change "development" to "production" in webpack.config.js (undo if need)
-  - [ ] "git branch gh-pages" (one time only)
-  - [ ] Commit everything (redo each time)
-  - [ ] "git checkout gh-pages && git merge main --no-edit" (redo each time)
-  - [ ] "npx webpack" (redo)
-  - [ ] 'git add dist -f && git commit -m "Deployment commit"' (redo)
-  - [ ] "git subtree push --prefix dist origin gh-pages" (redo)
-  - [ ] "git checkout main" (redo)
-- [ ] Review README
-  - [ ] Live Page Link
-  - [ ] Built With
-  - [ ] Reflection
+- [x] Deployment
+  - [x] Change "development" to "production" in webpack.config.js (undo if need)
+  - [x] "git branch gh-pages" (one time only)
+  - [x] Commit everything (redo each time)
+  - [x] "git checkout gh-pages && git merge main --no-edit" (redo each time)
+  - [x] "npx webpack" (redo)
+  - [x] 'git add dist -f && git commit -m "Deployment commit"' (redo)
+  - [x] "git subtree push --prefix dist origin gh-pages" (redo)
+  - [x] "git checkout main" (redo)
+- [x] Review README
+  - [x] Live Page Link
+  - [x] Built With
+  - [x] Reflection
 
 ### User Stories
 
@@ -142,7 +142,7 @@ export default new View();
 
 ### Lessons & Difficulties
 
-Some lessons learned along the way
+Error handling can be tricky. I saw a bug that I was not able to replicate. It had to do with throttling my API access. It is doubly strange because I thought this possibility was covered by the current error handling.
 
 ### Diary
 
