@@ -73,18 +73,18 @@ The goal of the project is to learn API calls through the usage of async/await a
     - [x] Get Weather At Location
     - [x] Log Weather At Noon For 3 Days (今, 明, 後天)
     - [x] Get User Input
-  - [ ] Fix bugs
+  - [x] Fix bugs
     - [x] If City Not Found
     - [x] If Input Is Empty
-  - [ ] UI
+  - [x] UI
     - [x] Refined UI
     - [x] Overall Layout
     - [x] Individual Section Layout
-    - [ ] Spinner
-  - [ ] Check Accessibility
-  - [ ] Optimization
+    - [x] Spinner
+  - [x] Check Accessibility
+  - [x] Optimization
     - [x] Images
-    - [ ] Lighthouse
+    - [x] Lighthouse
 - [ ] Deployment
   - [ ] Change "development" to "production" in webpack.config.js (undo if need)
   - [ ] "git branch gh-pages" (one time only)
