@@ -76,18 +76,13 @@ The goal of the project is to learn API calls through the usage of async/await a
   - [ ] Fix bugs
     - [ ] No Bugs Yet!
   - [ ] UI
-    - [ ] Refined UI
-    - [ ] Color Palette
-    - [ ] Overall Layout
-    - [ ] Individual Section Layout
-    - [ ] Menu/Nav
-  - [ ] Responsive Design
-    - [ ] Resposive Images (Art Direction)
-    - [ ] Media Queries
-    - [ ] Mobile Menu
+    - [x] Refined UI
+    - [x] Overall Layout
+    - [x] Individual Section Layout
+    - [ ] Spinner
   - [ ] Check Accessibility
   - [ ] Optimization
-    - [ ] Images
+    - [x] Images
     - [ ] Lighthouse
 - [ ] Deployment
   - [ ] Change "development" to "production" in webpack.config.js (undo if need)
