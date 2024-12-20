@@ -13,24 +13,26 @@ class View {
     this.#weather.innerHTML = '';
     const markup = `
       <p class="location">${city}, ${country}</p>
-      <div class="weather-card today">
-        <p class="day">Today</p>
-        <p class="temp-curr">Now: ${arr[0].currTemp}ºC</p>
-        <p class="temp-max">Max: ${arr[0].maxTemp}ºC</p>
-        <p class="temp-min">Min: ${arr[0].minTemp}ºC</p>
-        <p class="temp-preci">Rain/Snow: ${arr[0].preciPr}%</p>
-      </div>
-      <div class="weather-card future">
-        <p class="day">Tomorrow</p>
-        <p class="temp-max">Max: ${arr[1].maxTemp}ºC</p>
-        <p class="temp-min">Min: ${arr[1].minTemp}ºC</p>
-        <p class="temp-preci">Rain/Snow: ${arr[1].preciPr}%</p>
-      </div>
-      <div class="weather-card future">
-        <p class="day">After Tomorrow</p>
-        <p class="temp-max">Max: ${arr[2].maxTemp}ºC</p>
-        <p class="temp-min">Min: ${arr[2].minTemp}ºC</p>
-        <p class="temp-preci">Rain/Snow: ${arr[2].preciPr}%</p>
+      <div class="card-container">
+        <div class="weather-card today">
+          <p class="info day">Today</p>
+          <p class="info temp-curr">Now: ${arr[0].currTemp}ºC</p>
+          <p class="info temp-max">Max: ${arr[0].maxTemp}ºC</p>
+          <p class="info temp-min">Min: ${arr[0].minTemp}ºC</p>
+          <p class="info temp-preci">Rain/Snow: ${arr[0].preciPr}%</p>
+        </div>
+        <div class="weather-card future">
+          <p class="info day">Tomorrow</p>
+          <p class="info temp-max">Max: ${arr[1].maxTemp}ºC</p>
+          <p class="info temp-min">Min: ${arr[1].minTemp}ºC</p>
+          <p class="info temp-preci">Rain/Snow: ${arr[1].preciPr}%</p>
+        </div>
+        <div class="weather-card future">
+          <p class="info day">After Tomorrow</p>
+          <p class="info temp-max">Max: ${arr[2].maxTemp}ºC</p>
+          <p class="info temp-min">Min: ${arr[2].minTemp}ºC</p>
+          <p class="info temp-preci">Rain/Snow: ${arr[2].preciPr}%</p>
+        <div>
       </div>`;
     this.#weather.insertAdjacentHTML('afterbegin', markup);
   }
