@@ -141,4 +141,4 @@ const init = function () {
   getWeather();
   view.addHandlerSearch(controlSearchResult);
 };
-// init();
+init();
