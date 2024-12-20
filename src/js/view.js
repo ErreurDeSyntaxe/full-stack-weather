@@ -64,6 +64,7 @@ class View {
    */
   getQuery() {
     const query = this.#search.value;
+    if (query === '') return new Error('Empty input');
     this.#search.value = '';
     return query;
   }

@@ -75,7 +75,7 @@ The goal of the project is to learn API calls through the usage of async/await a
     - [x] Get User Input
   - [ ] Fix bugs
     - [x] If City Not Found
-    - [ ] If Input Is Empty
+    - [x] If Input Is Empty
   - [ ] UI
     - [x] Refined UI
     - [x] Overall Layout

@@ -116,6 +116,10 @@ const controlSearchResult = async function () {
     // get search query
     const query = view.getQuery();
     if (!query) return;
+    if (typeof query === 'object') {
+      view.renderError('Empty input');
+      throw new Error('Empty input');
+    }
 
     // find the location thru API
     const search = await fetch(`https://geocode.xyz/locate=${query}?json=1`);
