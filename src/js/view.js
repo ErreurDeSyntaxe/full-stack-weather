@@ -42,6 +42,10 @@ class View {
    */
   renderSpinner() {
     console.log('spinning');
+    this.#weather.innerHTML = '';
+    const markup = `
+    <p class="location">Please wait.</p>`;
+    this.#weather.insertAdjacentHTML('afterbegin', markup);
   }
 
   /**

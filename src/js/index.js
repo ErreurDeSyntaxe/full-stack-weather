@@ -57,6 +57,7 @@ const makeWeatherObj = function (currTemp, appTemp, preciPr, minTemp, maxTemp) {
  * @param {object} [location = undefined] Latitude, longitude, city & country
  */
 const getWeather = async function (location = undefined) {
+  view.renderSpinner();
   try {
     // The location was not specified by the user (at page load)
     if (location === undefined) {
