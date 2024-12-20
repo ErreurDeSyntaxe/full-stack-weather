@@ -78,12 +78,10 @@ body {
 .main {
   flex: 1;
 }
+.main {
+}
 .section {
   padding: 2rem 0;
-}
-.section-hero {
-}
-.hero {
 }
 .hero-text-box {
   font-size: 5.4rem;
@@ -153,12 +151,12 @@ body {
 .today {
   transform: scale(1.4) translateX(-4rem);
 }
-.future {
-  /* max-width: 25rem; */
-  /* max-height: 25rem; */
-}
 .info {
   font-size: 2rem;
+  color: #4c7944;
+}
+.day {
+  margin-bottom: 1.5rem;
 }
 .footer {
   font-size: 1.6rem;
