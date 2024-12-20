@@ -38,13 +38,23 @@ class View {
   }
 
   /**
-   * @todo Render a spinner on the page to indicate processing
+   * Display message to user to inform them their request is loading
    */
   renderSpinner() {
     console.log('spinning');
     this.#weather.innerHTML = '';
     const markup = `
     <p class="location">Please wait.</p>`;
+    this.#weather.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  /**
+   * Display message to user to inform them their was a problem
+   */
+  renderError(message) {
+    this.#weather.innerHTML = '';
+    const markup = `
+    <p class="location">${message}</p>`;
     this.#weather.insertAdjacentHTML('afterbegin', markup);
   }
 

@@ -100,6 +100,7 @@ const getWeather = async function (location = undefined) {
     );
   } catch (err) {
     console.error(err);
+    view.renderError('There was an issue fetching the weather data.');
   }
 };
 
@@ -122,6 +123,14 @@ const controlSearchResult = async function () {
 
     // extract relevant data
     const data = await search.json();
+
+    if (data?.error) {
+      view.renderError('City not found');
+      throw new Error('City not found');
+    }
+    if (data.city === 'Throttled! See geocode.xyz/pricing') {
+      view.renderError('Request rejected (5 seconds between queries)');
+    }
     const { latt: lat, longt: lng } = data;
     const { city, countryname: country } = data.standard;
 
