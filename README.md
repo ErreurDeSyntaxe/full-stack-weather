@@ -74,7 +74,8 @@ The goal of the project is to learn API calls through the usage of async/await a
     - [x] Log Weather At Noon For 3 Days (今, 明, 後天)
     - [x] Get User Input
   - [ ] Fix bugs
-    - [ ] If City Not Found
+    - [x] If City Not Found
+    - [ ] If Input Is Empty
   - [ ] UI
     - [x] Refined UI
     - [x] Overall Layout
